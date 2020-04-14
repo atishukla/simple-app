@@ -17,3 +17,14 @@ Verify after this going to localhost or docker host ip at port 8080
 ``` kubectl port-forward simple-app-69464d8bbc-bdgl9 8080:80```
 9. curl localhost:8080 and it will give the index.html content
 10. Apply ingress (optional) and see you get the page
+---------------------------------------------------------------------
+## Circle CI part
+1. Login with your github account on circle CI
+2. select your project
+3. Build an intial pipeline which will fail (Add manually)
+4. Go to Project settings and add some environment variables
+    - DOCKERHUB_USERNAME - You should know
+    - DOCKERHUB_PASS - You should know
+    - KUBERNETES_TOKEN - token you get in step 2 of kubernetes admin readme part
+    - KUBERNETES_SERVER - you get from ~/.kube/config
+    - KUBERNETES_CLUSTER_CERTIFICATE - you get from ~/.kube/config
