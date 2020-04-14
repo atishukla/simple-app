@@ -1,0 +1,13 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-jira-web
+spec:
+  rules:
+  - host: simple-app.kubernetes.learn-devops.xyz
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: simple-app
+          servicePort: 80
