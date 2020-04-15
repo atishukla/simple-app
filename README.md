@@ -28,3 +28,5 @@ Verify after this going to localhost or docker host ip at port 8080
     - KUBERNETES_TOKEN - token you get in step 2 of kubernetes admin readme part
     - KUBERNETES_SERVER - you get from ~/.kube/config
     - KUBERNETES_CLUSTER_CERTIFICATE - you get from ~/.kube/config
+5. Now instead of always using latest tag for docker image we will use the circle hash for the same
+6. Also to replace the same in deployment file check the shell script
