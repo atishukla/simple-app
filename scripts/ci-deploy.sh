@@ -15,6 +15,8 @@ envsubst <./kube/01-simple-app-deployment.yaml >./kube/01-simple-app-deployment.
 mv ./kube/01-simple-app-deployment.yaml.out ./kube/01-simple-app-deployment.yaml
 
 
+echo $KUBERNETES_SERVER
+
 echo $KUBERNETES_CLUSTER_CERTIFICATE
 echo $KUBERNETES_CLUSTER_CERTIFICATE | base64 --decode > cert.crt
 
