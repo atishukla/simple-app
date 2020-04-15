@@ -18,11 +18,11 @@ envsubst <./kube/01-simple-app-deployment.yaml >./kube/01-simple-app-deployment.
 mv ./kube/01-simple-app-deployment.yaml.out ./kube/01-simple-app-deployment.yaml
 
 
-echo "$KUBERNETES_CLUSTER_CERTIFICATE" | base64 --decode > cert.crt
+# echo "$KUBERNETES_CLUSTER_CERTIFICATE" | base64 --decode > cert.crt
 
 ./kubectl \
   --kubeconfig=/dev/null \
   --server=$KUBERNETES_SERVER \
-  --certificate-authority=cert.crt \
+  --certificate-authority=$KUBERNETES_CLUSTER_CERTIFICATE \
   --token=$KUBERNETES_TOKEN \
   apply -f ./kube/
