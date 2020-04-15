@@ -30,3 +30,4 @@ Verify after this going to localhost or docker host ip at port 8080
     - KUBERNETES_CLUSTER_CERTIFICATE - you get from ~/.kube/config
 5. Now instead of always using latest tag for docker image we will use the circle hash for the same
 6. Also to replace the same in deployment file check the shell script
+7. Now install envsubst and kubectl binary in the circle ci runner container in config.yml
