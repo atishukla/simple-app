@@ -17,6 +17,15 @@ mv ./kube/01-simple-app-deployment.yaml.out ./kube/01-simple-app-deployment.yaml
 CERT_MID=$(echo "$KUBERNETES_CLUSTER_CERTIFICATE" | base64 --decode)
 echo "$CERT_MID" | base64 --decode > cert.crt
 
+
+./kubectl \
+  --kubeconfig=/dev/null \
+  --server=$KUBERNETES_SERVER \
+  --certificate-authority=cert.crt \
+  --token=$KUBERNETES_TOKEN \
+  delete -f ./kube/
+
+
 ./kubectl \
   --kubeconfig=/dev/null \
   --server=$KUBERNETES_SERVER \
