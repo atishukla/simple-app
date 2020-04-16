@@ -23,12 +23,4 @@ echo "$CERT_MID" | base64 --decode > cert.crt
   --server=$KUBERNETES_SERVER \
   --certificate-authority=cert.crt \
   --token=$KUBERNETES_TOKEN \
-  delete -f ./kube/
-
-
-./kubectl \
-  --kubeconfig=/dev/null \
-  --server=$KUBERNETES_SERVER \
-  --certificate-authority=cert.crt \
-  --token=$KUBERNETES_TOKEN \
   apply -f ./kube/
