@@ -14,8 +14,8 @@ export SHORT_HASH=$SHORT_HASH
 envsubst <./kube/01-simple-app-deployment.yaml >./kube/01-simple-app-deployment.yaml.out
 mv ./kube/01-simple-app-deployment.yaml.out ./kube/01-simple-app-deployment.yaml
 
-
-echo "$KUBERNETES_CLUSTER_CERTIFICATE" | base64 --wrap=0 | base64 --decode > cert.crt
+CERT_MID=$(echo "$KUBERNETES_CLUSTER_CERTIFICATE" | base64 --decode)
+echo "$CERT_MID" | base64 --decode > cert.crt
 
 ./kubectl \
   --kubeconfig=/dev/null \
